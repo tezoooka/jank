@@ -1,0 +1,125 @@
+Date : 2021-05-11 12:11:24
+Directory : c:\Jank
+Total : 80 files,  4254 codes, 247 comments, 1354 blanks, all 5855 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Java     |         77 |      4,039 |        245 |      1,349 |      5,633 |
+| XML      |          1 |        204 |          2 |          1 |        207 |
+| Batch    |          1 |          7 |          0 |          3 |         10 |
+| YAML     |          1 |          4 |          0 |          1 |          5 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                            | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                               |         80 |      4,254 |        247 |      1,354 |      5,855 |
+| src                                                                                             |         77 |      4,039 |        245 |      1,349 |      5,633 |
+| src\main                                                                                        |         77 |      4,039 |        245 |      1,349 |      5,633 |
+| src\main\java                                                                                   |         77 |      4,039 |        245 |      1,349 |      5,633 |
+| src\main\java\jp                                                                                |         77 |      4,039 |        245 |      1,349 |      5,633 |
+| src\main\java\jp\co                                                                             |         77 |      4,039 |        245 |      1,349 |      5,633 |
+| src\main\java\jp\co\jastec                                                                      |         77 |      4,039 |        245 |      1,349 |      5,633 |
+| src\main\java\jp\co\jastec\jank                                                                 |         77 |      4,039 |        245 |      1,349 |      5,633 |
+| src\main\java\jp\co\jastec\jank\base                                                            |         31 |      1,648 |        154 |        523 |      2,325 |
+| src\main\java\jp\co\jastec\jank\base\datetime                                                   |         19 |      1,152 |         90 |        363 |      1,605 |
+| src\main\java\jp\co\jastec\jank\base\datetime\calendar                                          |         12 |        716 |         54 |        219 |        989 |
+| src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays                                 |          9 |        508 |         36 |        154 |        698 |
+| src\main\java\jp\co\jastec\jank\base\validation                                                 |          5 |        155 |         21 |         57 |        233 |
+| src\main\java\jp\co\jastec\jank\cli                                                             |          8 |        447 |          8 |        176 |        631 |
+| src\main\java\jp\co\jastec\jank\input                                                           |         12 |        644 |         16 |        203 |        863 |
+| src\main\java\jp\co\jastec\jank\model                                                           |         17 |        997 |         38 |        337 |      1,372 |
+| src\main\java\jp\co\jastec\jank\model\detail                                                    |          9 |        355 |          8 |        124 |        487 |
+| src\main\java\jp\co\jastec\jank\model\header                                                    |          7 |        580 |         30 |        192 |        802 |
+| src\main\java\jp\co\jastec\jank\service                                                         |          8 |        293 |         26 |        102 |        421 |
++-------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                        | language | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Jank\.travis.yml                                                                             | YAML     |          4 |          0 |          1 |          5 |
+| c:\Jank\jank.bat                                                                                | Batch    |          7 |          0 |          3 |         10 |
+| c:\Jank\pom.xml                                                                                 | XML      |        204 |          2 |          1 |        207 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\Jank.java                                               | Java     |         10 |          3 |          8 |         21 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\FixedWidthString.java                              | Java     |         94 |         18 |         22 |        134 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\JankCodeElement.java                               | Java     |         26 |          1 |         13 |         40 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\JankException.java                                 | Java     |         29 |          0 |          8 |         37 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\JankList.java                                      | Java     |         34 |          6 |         10 |         50 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\JankMessage.java                                   | Java     |         44 |          2 |         10 |         56 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\JankReportElement.java                             | Java     |         13 |          3 |          7 |         23 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\ZenAlign.java                                      | Java     |        101 |         13 |         33 |        147 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\DateTimeFormatException.java              | Java     |         14 |          0 |          6 |         20 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\DateTimeUtils.java                        | Java     |         20 |          2 |          9 |         31 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\JankDate.java                             | Java     |        162 |         15 |         52 |        229 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\JankDateTime.java                         | Java     |         24 |          2 |          9 |         35 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\JankTime.java                             | Java     |        160 |         16 |         49 |        225 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\JankTimeRange.java                        | Java     |         53 |          1 |         16 |         70 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\MissingCalendarException.java             | Java     |          3 |          0 |          3 |          6 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\JankCalendar.java                | Java     |         81 |          7 |         25 |        113 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\JankDateCharacteristic.java      | Java     |         75 |         10 |         22 |        107 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\JankHoliday.java                 | Java     |         52 |          1 |         18 |         71 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\EnterpriseHoliday.java  | Java     |         35 |          3 |         13 |         51 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\EquinoxDay.java         | Java     |         82 |          3 |         18 |        103 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\HappyMonday.java        | Java     |         38 |          3 |         15 |         56 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\NationsDayoff.java      | Java     |         49 |          4 |         11 |         64 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\PinpointPatch.java      | Java     |         41 |          2 |          9 |         52 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\PublicNamedHoliday.java | Java     |         48 |          2 |         26 |         76 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\StaticHoliday.java      | Java     |         57 |          4 |         23 |         84 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\SubstitudeHoliday.java  | Java     |         58 |          7 |         14 |         79 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\datetime\calendar\holidays\VersionableFactory.java | Java     |        100 |          8 |         25 |        133 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\validation\JankValidatable.java                    | Java     |          4 |          0 |          2 |          6 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\validation\JankValidatableBase.java                | Java     |          8 |          0 |          5 |         13 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\validation\JankValidator.java                      | Java     |         33 |         14 |         16 |         63 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\validation\ResultList.java                         | Java     |          6 |          3 |          4 |         13 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\base\validation\StringFormatChecker.java                | Java     |        104 |          4 |         30 |        138 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\cli\CliView.java                                        | Java     |         43 |          0 |         16 |         59 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\cli\InputRejectException.java                           | Java     |         22 |          0 |          7 |         29 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\cli\Interactive.java                                    | Java     |         21 |          0 |         13 |         34 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\cli\InteractiveInput.java                               | Java     |         80 |          0 |         29 |        109 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\cli\InteractiveLoop.java                                | Java     |         56 |          2 |         26 |         84 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\cli\InteractiveSelect.java                              | Java     |        119 |          4 |         50 |        173 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\cli\JankConsole.java                                    | Java     |         81 |          2 |         24 |        107 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\cli\ModelViewer.java                                    | Java     |         25 |          0 |         11 |         36 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\AbsenceTimeInput.java                             | Java     |        107 |          2 |         32 |        141 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\DateInput.java                                    | Java     |         43 |          0 |         12 |         55 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\DayOffInput.java                                  | Java     |         46 |          0 |         15 |         61 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\DetailInput.java                                  | Java     |        123 |          9 |         39 |        171 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\EmpNoInput.java                                   | Java     |         30 |          0 |         11 |         41 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\Ending.java                                       | Java     |         37 |          3 |         10 |         50 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\HalfDayOffInput.java                              | Java     |         51 |          0 |         14 |         65 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\Opening.java                                      | Java     |         33 |          0 |         11 |         44 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\RestCheckInput.java                               | Java     |         46 |          0 |         17 |         63 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\StartDetailInput.java                             | Java     |         30 |          1 |         10 |         41 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\TimeInput.java                                    | Java     |         58 |          0 |         18 |         76 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\input\WorkingPatternInput.java                          | Java     |         40 |          1 |         14 |         55 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\JankModel.java                                    | Java     |         62 |          0 |         21 |         83 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\DetailContainer.java                       | Java     |        110 |          4 |         35 |        149 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\GenericProject.java                        | Java     |         16 |          0 |          8 |         24 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\Practice.java                              | Java     |         45 |          1 |         17 |         63 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\Productive.java                            | Java     |         38 |          0 |         14 |         52 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\Project.java                               | Java     |         35 |          0 |         10 |         45 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\ProjectWithProductive.java                 | Java     |         20 |          0 |          8 |         28 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\ProjectWithTask.java                       | Java     |         20 |          0 |         10 |         30 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\ProjectWithoutTasks.java                   | Java     |         28 |          0 |         10 |         38 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\detail\Task.java                                  | Java     |         43 |          3 |         12 |         58 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\header\AbsenceTime.java                           | Java     |        170 |          9 |         49 |        228 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\header\DayOffType.java                            | Java     |         36 |          1 |         10 |         47 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\header\Employee.java                              | Java     |         43 |          2 |         12 |         57 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\header\RestCheck.java                             | Java     |        109 |         14 |         35 |        158 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\header\WorkingDateTime.java                       | Java     |        127 |          1 |         47 |        175 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\header\WorkingDateTimeValidator.java              | Java     |         71 |          1 |         28 |        100 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\model\header\WorkingPattern.java                        | Java     |         24 |          2 |         11 |         37 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\service\AbstractService.java                            | Java     |          3 |          0 |          3 |          6 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\service\CustomerService.java                            | Java     |         64 |          3 |         14 |         81 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\service\JankArchiver.java                               | Java     |         36 |          3 |         15 |         54 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\service\JankDao.java                                    | Java     |          3 |          0 |          3 |          6 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\service\JankMaster.java                                 | Java     |         81 |         11 |         32 |        124 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\service\MyPracticeService.java                          | Java     |         66 |          1 |         24 |         91 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\service\ProjectSercive.java                             | Java     |         39 |          4 |         11 |         54 |
+| c:\Jank\src\main\java\jp\co\jastec\jank\service\package-info.java                               | Java     |          1 |          4 |          0 |          5 |
+| Total                                                                                           |          |      4,254 |        247 |      1,354 |      5,855 |
++-------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
