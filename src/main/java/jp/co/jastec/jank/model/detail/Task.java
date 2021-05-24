@@ -8,6 +8,7 @@ import jp.co.jastec.jank.base.JankNode;
 import jp.co.jastec.jank.base.JankMessage;
 import jp.co.jastec.jank.base.ManHour;
 import jp.co.jastec.jank.base.validation.StringFormatChecker;
+import jp.co.jastec.jank.service.TaskSet.TaskElement;
 
 /**
  * 工程作業項目
@@ -16,6 +17,7 @@ public class Task extends JankNode {
 
     @Expose
     private float hours;
+    private String taskName ;
 
     public Task(String taskCode, float hours) {
         super(taskCode);
@@ -23,7 +25,18 @@ public class Task extends JankNode {
             throw new JankException(JankMessage.HOURS_NOT_05UNIT);
         }
         this.hours = hours;
+        this.taskName = "";
     }
+
+    public Task(TaskElement taskElement, float hours) {
+        super(taskElement.code());
+        this.name = taskElement.name();
+        if ( ! ManHour.is05Unit(hours)) {
+            throw new JankException(JankMessage.HOURS_NOT_05UNIT);
+        }
+        this.hours = hours;
+    }
+
 
     public void setHours(float hours) {
         this.hours = hours;
@@ -39,7 +52,7 @@ public class Task extends JankNode {
 
     @Override
     protected String getNameByCode() {
-        return "";
+        return this.taskName;
     }
 
     @Override

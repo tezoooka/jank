@@ -9,7 +9,6 @@ import jp.co.jastec.jank.base.JankMessage;
 import jp.co.jastec.jank.base.datetime.JankTime;
 import jp.co.jastec.jank.base.datetime.JankTimeRange;
 import jp.co.jastec.jank.cli.CliView;
-import jp.co.jastec.jank.cli.CliView.CliViewString;
 import jp.co.jastec.jank.cli.CliView.CliViewable;
 
 /**
@@ -97,7 +96,7 @@ public class AbsenceTime extends ArrayList<AbsenceTime.Detail> implements CliVie
     /**
      * 不就業の明細行
      */
-    public static class Detail implements JankTimeRange, CliViewString {
+    public static class Detail implements JankTimeRange {
 
         @Expose private Type type;
         @Expose private Reason reason;
@@ -137,7 +136,6 @@ public class AbsenceTime extends ArrayList<AbsenceTime.Detail> implements CliVie
         @Override
         public JankTime higher() { return this.to;} 
 
-        @Override
         public String getViewString() {
 
             return String.format("%s %s(%s) %s-%s", 

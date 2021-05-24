@@ -3,6 +3,9 @@ package jp.co.jastec.jank.cli;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/** Modelクラスが、CLI表示を行うための文字列を格納する入れ物 */
+/// 基本的は、<String>のリストで CliViewableインターフェースを介して、
+/// Modelの内容を、InteractiveLoopが拾ってConsoleに出力する
 public class CliView extends ArrayList<String> {
     
     public static final String HR = "------------------------------------------------------------------------------";
@@ -51,13 +54,9 @@ public class CliView extends ArrayList<String> {
         return true;
     }
 
-
+    /** CLI表示可能なModelが実装するインターフェース */
     public static interface CliViewable {
         public CliView getView() ;
-    }
-
-    public static interface CliViewString {
-        public String getViewString() ;
     }
 
 }

@@ -7,7 +7,6 @@ public class Option<T> {
     boolean isDefault = false ;
 
     T value ;
-    // public static Option<?> NOTHONG_SELECTED = new Option<>("", "（選択しない）", null);
 
     public Option(String index, String caption, T value) {
         this(index, caption, value, false) ;
@@ -32,11 +31,5 @@ public class Option<T> {
     public boolean isDefault() {
         return isDefault;
     }
-
-    // @SuppressWarnings("unchecked")
-    // public Option<T> nothing() {
-    //     return (Option<T>) Option.NOTHONG_SELECTED;
-    // }
-    
 
 }

@@ -37,14 +37,14 @@ public class TaskHourInput extends InteractiveInput {
         this.previousInput = previousInut;
     }
 
-    protected String createSelectabeList() {
-        StringBuilder sb = new StringBuilder();
-        for ( TaskElement te : this.taskSet.get()) {
-            String caption = JankCodeElement.fixing(te.code(), 3, te.name(),8) ;
-            sb.append(caption);
-        }
-        return sb.toString();
-    }
+    // protected String createSelectabeList() {
+    //     StringBuilder sb = new StringBuilder();
+    //     for ( TaskElement te : this.taskSet.get()) {
+    //         String caption = JankCodeElement.fixing(te.code(), 3, te.name(),8) ;
+    //         sb.append(caption);
+    //     }
+    //     return sb.toString();
+    // }
 
     @Override
     public String prompt() {
@@ -93,16 +93,15 @@ public class TaskHourInput extends InteractiveInput {
         if ( this.state != InteractiveState.Doing ) {
             return ;
         }
-
         Practice pra = this.model.getPractices().find(practiceCode);
         Project  prj = pra.getProjects().find(projectCode);
-        Task newTask = new Task(inputTaskCode, inputHours);
+        Task newTask = new Task(taskSet.get(this.inputTaskCode), inputHours);
         prj.getTasks().add(newTask, prj);
+
     }
 
     @Override
     protected Interactive getNext() {
-
 
         switch (this.state) {
             case Doing: 
@@ -123,7 +122,7 @@ public class TaskHourInput extends InteractiveInput {
 
         StringBuilder sb = new StringBuilder();
         
-        for ( TaskElement te : this.taskSet.get()) {
+        for (TaskElement te : this.taskSet) {
             String caption = "  " + JankCodeElement.fixing(te.code(), 4, te.name(), 10) + "\n";
             sb.append(caption);
         }
