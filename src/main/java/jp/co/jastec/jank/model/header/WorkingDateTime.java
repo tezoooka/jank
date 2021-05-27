@@ -98,24 +98,18 @@ public class WorkingDateTime implements JankTimeRange, CliViewable, JankValidata
     }
 
     public float getWorkingHours() {
-    
-        float clockHours = 0 ;
-        float restHours = 0 ;
-        float absenceHours = 0 ;
 
-        if ( startTime != null && finishTime != null) {
-
-            clockHours = JankTime.hoursBetween(startTime, finishTime);
-
-            restHours = restCheck.getDeducationHours(this);
-    
-            if ( absenceTime != null) {
-                absenceHours = absenceTime.getDeducationHours();
-            }
+        // 始業時刻・終了時刻が未入力の場合は、計算しない
+        if ( startTime == null || finishTime == null) {
+            return 0;
         }
 
+        final float clockHours = JankTime.hoursBetween(startTime, finishTime);
+        final float restHours = restCheck.getDeducationHours(startTime, finishTime);
+        final float absenceHours = absenceTime.getDeducationHours();
+        // 物理的な実時間 - 休憩時間 - 不就業時間
+        return clockHours - restHours - absenceHours ;
 
-         return clockHours - restHours - absenceHours ;
     }
 
 

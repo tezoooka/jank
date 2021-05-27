@@ -24,8 +24,6 @@ public abstract class VersionableFactory implements JankDateCharacteristic.Facto
         this.name = name;
     }
 
-    // public abstract Factory[] getFactories(); 
-
     /// 無くても良いメソッドだけど、一応defineの指定内容に矛盾がないかチェックしている。
     protected VersionableFactory defined() {
         for (int i = 0 ;  i < this.versions.size() - 1; i++) {

@@ -58,10 +58,10 @@ public class RestCheck implements CliViewable {
         this.deductions.add(item);
     }
 
-    public float getDeducationHours(JankTimeRange workStartFinish) {
+    public float getDeducationHours(JankTime startTime, JankTime finishTime) {
         float sum = 0 ;
         for ( RestCheckItem r : deductions) {
-            sum += r.getDeductionHuors(workStartFinish.lower() , workStartFinish.higher());
+            sum += r.getDeductionHuors(startTime , finishTime);
         }
         return sum;
     }

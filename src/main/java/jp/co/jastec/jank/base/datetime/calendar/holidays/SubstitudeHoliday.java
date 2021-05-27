@@ -42,12 +42,12 @@ public class SubstitudeHoliday  {
             JankDateCharacteristic cha = jankCalendar.get(eachSunday) ;
 
             if ( cha != null && cha.isPublicHoliday() ) {
-                JankDate altHoliday = findSubstitude(eachSunday) ;
-                Factory factory = new Factory() {
+                final JankDate subst = findSubstitude(eachSunday) ;
+                final Factory factory = new Factory() {
                     @Override
                     public JankDateCharacteristic create(int year) {
                         return new JankHoliday(
-                            "振替休日(" + cha.getName() + ")",  altHoliday,  HolidayType.SUBSTITUTE_HOLIDAY
+                            "振替休日(" + cha.getName() + ")",  subst,  HolidayType.SUBSTITUTE_HOLIDAY
                         );
                     }
                 };

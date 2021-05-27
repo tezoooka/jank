@@ -50,7 +50,4 @@ public class JankArchiver {
         File file = new File(JankHome.ARCHIVE_DIR, uniqName);
         return file ;
     }
-
-
-
 }
