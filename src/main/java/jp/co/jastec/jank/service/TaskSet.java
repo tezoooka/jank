@@ -123,7 +123,7 @@ public class TaskSet  extends ArrayList<TaskElement> {
 
         @Override
         protected boolean isValidFormat(String code) {
-            return true;
+            return code.length() == 3;
         }
         
     }

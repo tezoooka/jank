@@ -1,10 +1,19 @@
 package jp.co.jastec.jank.model.header;
 
+import java.lang.reflect.Type;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 import com.google.gson.annotations.Expose;
 
 import jp.co.jastec.jank.base.JankMessage;
@@ -28,8 +37,8 @@ public class RestCheck implements CliViewable {
     public static final RestCheckItem DEEP   = RestCheckItem.create( "26:00", "27:00", "深夜" ) ;
 
 
-    /** 全部入りのリスト */
-    private static List<RestCheckItem> ALL = Arrays.asList(LANCH, DINNER, NIGHT, DEEP) ;
+    /** 全部入り */
+    private static Collection<RestCheckItem> ALL = Arrays.asList(LANCH, DINNER, NIGHT, DEEP) ;
 
     @Expose
     private Set<RestCheckItem> deductions;
@@ -57,19 +66,8 @@ public class RestCheck implements CliViewable {
         return sum;
     }
 
-    public static List<RestCheckItem> itemList() {
+    public static Collection<RestCheckItem> items() {
         return ALL ;
-    }
-
-    @Deprecated
-    public static RestCheckItem choice_(char c) {
-        for ( RestCheckItem rc : ALL ) {
-            char properChar = rc.getDispString().charAt(0);
-            if ( properChar == c) {
-                return rc ;
-            }
-        }
-        return null ;
     }
 
     public JankMessage validateWithWorkingTime( JankTimeRange fromTo ) {
@@ -86,8 +84,9 @@ public class RestCheck implements CliViewable {
 
         StringBuilder viewString = new StringBuilder(); 
         viewString.append("休憩控除: ");
-        RestCheck.itemList().forEach((item)-> viewString.append(getViewString(item)));
+        RestCheck.items().forEach((item)-> viewString.append(getViewString(item)));
         return new CliView(viewString);
+
     }
 
     private String getViewString(RestCheckItem item) {
@@ -96,6 +95,48 @@ public class RestCheck implements CliViewable {
         } else {
             return "__ " ;
         }
+    }
+
+    public static JsonSerializer<RestCheck> JSON_SERIALIZER = new JsonSerializer<RestCheck>(){
+        @Override
+        public JsonElement serialize(RestCheck src, Type typeOfSrc, JsonSerializationContext context) {
+
+            Set<RestCheckItem> unchecked = new HashSet<>();
+            for (RestCheckItem rci : ALL ) {
+                if ( !src.deductions.contains(rci)) {
+                    unchecked.add(rci);
+                } 
+            }
+            String csv =  unchecked.stream().map((i) -> i.dispString).collect(Collectors.joining(","));
+            return new JsonPrimitive(csv);
+        }        
+    };
+
+
+    public static JsonDeserializer<RestCheck> JSON_DESERIALIZER = new JsonDeserializer<RestCheck>(){
+        @Override
+        public RestCheck deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+                throws JsonParseException {
+            String[] rests = json.getAsString().split(",");
+            RestCheck restCheck = new RestCheck();
+            for (String restString : rests) {
+                RestCheckItem serielized = get(restString);
+                if ( null == serielized ) {
+                    throw new JsonParseException(json.getAsString());
+                }
+                restCheck.check(serielized);
+            }
+            return null;
+        }
+    };
+
+    public static RestCheckItem get(String dispString) {
+        for ( RestCheckItem item : ALL ) {
+            if ( item.dispString.equals(dispString)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     public static class RestCheckItem implements JankTimeRange {
@@ -132,10 +173,6 @@ public class RestCheck implements CliViewable {
         private float getDurationHours() {
             return JankTime.hoursBetween(startAt, endAt);
         }
-
-        // public String getDispChar() {
-        //     return dispString.substring(0, 1);
-        // }
 
         public String getDispString() {
             return dispString;

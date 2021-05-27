@@ -86,8 +86,8 @@ public class AbsenceTimeInput extends InteractiveInput {
             break ;
 
         case EARLY:
-            from = JankTime.STD_WORKFINISH;
-            to = this.finishTime;
+            from = this.finishTime;
+            to = JankTime.STD_WORKFINISH;
             code = line.trim();
             break;
     

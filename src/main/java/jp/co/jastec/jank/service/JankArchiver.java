@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder;
 import jp.co.jastec.jank.base.JankException;
 import jp.co.jastec.jank.base.datetime.JankDate;
 import jp.co.jastec.jank.base.datetime.JankTime;
+import jp.co.jastec.jank.model.header.RestCheck;
 
 /// JankModelの内容をファイルに保存する
 /// 本来であれば、DBに格納するなり、HTTPでPOSTするなりする処理であるが、
@@ -28,6 +29,7 @@ public class JankArchiver {
             Gson gson = new GsonBuilder()
                 .registerTypeAdapter(JankTime.class, JankTime.JSON_SERIALIZER)
                 .registerTypeAdapter(JankDate.class, JankDate.JSON_SERIALIZER)
+                .registerTypeAdapter(RestCheck.class, RestCheck.JSON_SERIALIZER)
                 .excludeFieldsWithoutExposeAnnotation()
                 .setPrettyPrinting()
                 .create();

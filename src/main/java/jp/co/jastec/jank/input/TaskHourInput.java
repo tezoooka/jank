@@ -28,23 +28,15 @@ public class TaskHourInput extends InteractiveInput {
     private InteractiveState state = InteractiveState.Doing; 
 
 
-    public TaskHourInput(JankModel model, String practiceCode, String projectCode, Interactive previousInut) {
+    public TaskHourInput(JankModel model, String practiceCode, String projectCode, Interactive previousInput) {
         super(model);
         this.practiceCode = practiceCode;
         this.projectCode = projectCode;
         ProjectAttibute pa = ProjectMaster.table().get(projectCode);
         this.taskSet = pa.getTaskSet();
-        this.previousInput = previousInut;
+        this.previousInput = previousInput;
     }
 
-    // protected String createSelectabeList() {
-    //     StringBuilder sb = new StringBuilder();
-    //     for ( TaskElement te : this.taskSet.get()) {
-    //         String caption = JankCodeElement.fixing(te.code(), 3, te.name(),8) ;
-    //         sb.append(caption);
-    //     }
-    //     return sb.toString();
-    // }
 
     @Override
     public String prompt() {
@@ -93,9 +85,9 @@ public class TaskHourInput extends InteractiveInput {
         if ( this.state != InteractiveState.Doing ) {
             return ;
         }
-        Practice pra = this.model.getPractices().find(practiceCode);
-        Project  prj = pra.getProjects().find(projectCode);
-        Task newTask = new Task(taskSet.get(this.inputTaskCode), inputHours);
+        final Practice pra = this.model.getPractices().find(practiceCode);
+        final Project  prj = pra.getProjects().find(projectCode);
+        final Task newTask = new Task(taskSet.get(this.inputTaskCode), inputHours);
         prj.getTasks().add(newTask, prj);
 
     }
@@ -121,11 +113,11 @@ public class TaskHourInput extends InteractiveInput {
     public String helpText() {
 
         StringBuilder sb = new StringBuilder();
-        
         for (TaskElement te : this.taskSet) {
-            String caption = "  " + JankCodeElement.fixing(te.code(), 4, te.name(), 10) + "\n";
+            final String caption = "  " + JankCodeElement.fixing(te.code(), 4, te.name(), 10) + "\n";
             sb.append(caption);
         }
         return sb.toString();
+        
     }
 }

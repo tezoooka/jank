@@ -47,7 +47,7 @@ public class RestCheckSelect extends InteractiveSelect<RestCheckItem> {
         final List<Option<RestCheckItem>> options = new ArrayList<>();
         options.add(RESTCHECK_NONE) ;
         int i = 1;
-        for ( RestCheckItem rci : RestCheck.itemList()) {
+        for ( RestCheckItem rci : RestCheck.items()) {
             final String caption = String.format("%s (%s-%s)", 
                         rci.getDispString(),
                         rci.lower().toDisplayString(),

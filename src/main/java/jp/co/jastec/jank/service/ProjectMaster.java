@@ -22,7 +22,7 @@ public class ProjectMaster extends JankMaster<ProjectAttibute> {
 
     @Override public ProjectAttibute parse(String... csvContents) {
         TaskSet taskSet = TaskSet.choice(csvContents[3]);
-        ProjectAttibute value = new ProjectAttibute(csvContents[1], csvContents[2],taskSet);
+        ProjectAttibute value = new ProjectAttibute(csvContents[1], csvContents[2], taskSet);
         return value;
     }
 
@@ -32,11 +32,6 @@ public class ProjectMaster extends JankMaster<ProjectAttibute> {
         }
         return mySelf;
     }
-
-
-    // public SortedMap<String, ProjectAttibute> all() {
-    //     return this;
-    // }
 
     public SortedMap<String, ProjectAttibute> selectByPractice(String practiceCode) {
 
